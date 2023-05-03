@@ -6,8 +6,8 @@ import javax.crypto.spec.SecretKeySpec;
 public class Client {
 
     //Possible T_LEN values are 128, 120, 112, 104 and 96
-    private SecretKey key;
     private final int T_LEN = 128;
+    private SecretKey key;
     private byte[] IV;
 
     public void initFromStrings(String secretKey, String IV) {
