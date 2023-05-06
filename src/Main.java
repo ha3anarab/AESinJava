@@ -1,6 +1,15 @@
 public class Main {
     public static void main(String[] args) {
 
+        //Hashing algorithm
+        try {
+            Hashing hashing = new Hashing();
+            String hashCode = hashing.getHashCode("This is secret code");
+            StringUtil.printWithSize(" Hash Text ", hashCode);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
         //SymmetricEncryption
         try {
             SymmetricEncryption symmetricEncryption = new SymmetricEncryption();
@@ -8,7 +17,7 @@ public class Main {
             String encryptedText = symmetricEncryption.encrypt("This is secret code");
             String decryptedText = symmetricEncryption.decrypt(encryptedText);
 
-            System.err.println(" Symmetric Encrypted Text : " + encryptedText);
+            System.err.println("\n" + " Symmetric Encrypted Text : " + encryptedText);
             System.err.println(" Symmetric Decrypted Text : " + decryptedText);
 
         } catch (Exception exception) {
