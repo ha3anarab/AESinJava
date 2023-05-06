@@ -7,5 +7,7 @@ Simple AES Example
  
  3-DigitalSignature [Example](https://github.com/ha3anarab/AESinJava/blob/master/src/DigitalSignature.java)
  
+ 4-Hashing [Example](https://github.com/ha3anarab/AESinJava/blob/master/src/Hashing.java)
+ 
  
 you can see usage of all example in [Main.java](https://github.com/ha3anarab/AESinJava/blob/master/src/Main.java)
