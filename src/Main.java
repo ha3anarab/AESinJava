@@ -1,15 +1,31 @@
-
 public class Main {
     public static void main(String[] args) {
-        try {
-            AES aes = new AES();
-            aes.init();
-            String encryptedText = aes.encrypt("This is secret code");
-            String decryptedText = aes.decrypt(encryptedText);
 
-            System.err.println("Encrypted Text : " + encryptedText);
-            System.err.println("Decrypted Text : " + decryptedText);
-        }catch (Exception exception) {
+        //SymmetricEncryption
+        try {
+            SymmetricEncryption symmetricEncryption = new SymmetricEncryption();
+            symmetricEncryption.init();
+            String encryptedText = symmetricEncryption.encrypt("This is secret code");
+            String decryptedText = symmetricEncryption.decrypt(encryptedText);
+
+            System.err.println(" Symmetric Encrypted Text : " + encryptedText);
+            System.err.println(" Symmetric Decrypted Text : " + decryptedText);
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        //ASymmetricEncryption
+        try {
+            ASymmetricEncryption aSymmetric = new ASymmetricEncryption();
+            aSymmetric.init();
+            String encryptedText = aSymmetric.encrypt("This is secret code");
+            String decryptedText = aSymmetric.decrypt(encryptedText);
+
+            System.err.println(" ASymmetric Encrypted Text : " + encryptedText);
+            System.err.println(" ASymmetric Decrypted Text : " + decryptedText);
+
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
     }

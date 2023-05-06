@@ -3,10 +3,9 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.GCMParameterSpec;
 
-public class AES {
+public class SymmetricEncryption {
     private SecretKey key;
     private Cipher encryptedCipher;
-    private final StringUtil stringUtil = new StringUtil();
 
     public void init() throws Exception {
         KeyGenerator generator = KeyGenerator.getInstance("AES");
@@ -22,11 +21,11 @@ public class AES {
         encryptedCipher = Cipher.getInstance("AES/GCM/NoPadding");
         encryptedCipher.init(Cipher.ENCRYPT_MODE, key);
         byte[] encryptedMessageInByte = encryptedCipher.doFinal(messageInBytes);
-        return stringUtil.encode(encryptedMessageInByte);
+        return StringUtil.encode(encryptedMessageInByte);
     }
 
     public String decrypt(String encryptedMessage) throws Exception {
-        byte[] messageInBytes = stringUtil.decode(encryptedMessage);
+        byte[] messageInBytes = StringUtil.decode(encryptedMessage);
         Cipher decryptCipher = Cipher.getInstance("AES/GCM/NoPadding");
 
         //Possible tLEN values are 128, 120, 112, 104 and 96
